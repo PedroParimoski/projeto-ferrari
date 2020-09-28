@@ -11,7 +11,7 @@
     text-decoration: none;
     outline: none;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: var(--border-);
     background-color: transparent;
     color: var(--black);
     &:hover {
@@ -25,7 +25,7 @@
     @include button;
     background-color: var(--green);
     color: var(--white);
-    border-radius: 6px;
+    border-radius:var(--border-);
     &:hover {
         background-color: var(--green-hover);
     }
@@ -37,7 +37,7 @@
     @include button;
     background-color: var(--black);
     color: var(--white);
-    border-radius: 6px;
+    border-radius: var(--border-);
     &:hover {
         background-color: var(--black-hover);
     }
@@ -49,7 +49,7 @@
     @include button;
     background-color: var(--gray-3);
     color: var(--gray-0);
-    border-radius: 6px;
+    border-radius: var(--border-);
     &:hover {
         background-color: var(--gray-hover);
     }
@@ -61,7 +61,7 @@
     @include button;
     background-color: var(--red);
     color: var(--white);
-    border-radius: 6px;
+    border-radius: var(--border-);
     &:hover {
         background-color: var(--red-hover);
     }
@@ -73,7 +73,7 @@
     @include button;
     background-color: var(--blue);
     color: var(--white);
-    border-radius: 6px;
+    border-radius: var(--border-);
     &:hover {
         background-color: var(--blue-hover);
     }
