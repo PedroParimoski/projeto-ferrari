@@ -4,7 +4,7 @@
     height: 60px;
     background-color: var(--gray-5);
     position: relative;
-    z-index: 3;
+    z-index: 5;
     .italy {
         width: 100%;
         position: absolute;
@@ -23,7 +23,7 @@
         top: 15px;
         width: 72px;
         right: calc(50vw - 36px); 
-        z-index: 5;
+        z-index: 7;
     }
     .menu {
         transition: right .5s ease-in-out;
@@ -34,7 +34,7 @@
         position: fixed;
         right: -300px;
         top: 0;
-        z-index: 4;
+        z-index: 6;
         flex-direction: column;
         justify-content: space-between;
         hr {
@@ -152,7 +152,7 @@
             width: 100%;
             height: 100vh;
             background-color: var(--dark-1);
-            z-index: 4;
+            z-index: 5;
         }
         .menu {
             right: 0;

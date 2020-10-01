@@ -11,7 +11,6 @@
         h2 {
             font-size: 22px;
             font-weight: 400;
-
         }
         button {
             @include button;
@@ -24,76 +23,73 @@
                 min-width: 50px;
             }
             button + button {
-                margin-left: 10px; 
+                margin-left: 10px;
             }
-            .btn-today {
-                display: none;
-            }
-            
         }
-        ul {
-            margin: 0;
-            padding: 0;
+        .btn-today {
+            display: none;
         }
-        .weekdays {
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .weekdays {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: var(--gray-0);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        li {
+            justify-content: center;
+            padding: 8px 0;
+            font-size: 12px;
             font-weight: bold;
-            text-transform: uppercase;
-            color: var(--gray-0);
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            
-            li {
-                text-align: center;
-                padding: 8px 0;
-                font-size: 12px;
-                font-weight: bold;
-
+        }
+    }
+    .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(5, 12vw);
+        grid-gap: 10px;
+        color: var(--dark-0);
+        li {
+            font-size: 16px;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .1s ease-in-out;
+            &:hover {
+                background-color: var(--gray-7);
             }
-            .days {
-                display: grid;
-                grid-template-columns: repeat(7, 1fr); 
-                grid-template-rows: repeat(5, 12vw); 
-                grid-gap: 10px;
-                color: var(--dark-0); 
-                li {
-                    font-size: 16px;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 0;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    transition: all .1s ease-in-out;
-                    &:hover {
-                        background-color: var(--gray-7);
-                    }
-                    &.active {
-                        background-color: var(--blue);
-                        color: var(--white);
-                        &:hover {
-                            background-color: var(--blue-hover);
-                        }
-                        &:active {
-                            background-color: var(--blue-active);
-                        }
-                    }
-                    &.selected {
-                        background-color: var(--green);
-                        color: var(--white);
-                        &:hover {
-                            background-color: var(--blue-green);
-                        }
-                        &:active {
-                            background-color: var(--blue-green);
-                        }
-                    }
+            &.active {
+                background-color: var(--blue);
+                color: var(--white);
+                &:hover {
+                    background-color: var(--blue-hover); 
+                }
+                &:active {
+                    background-color: var(--blue-active); 
                 }
             }
-            
+            &.selected {
+                background-color: var(--green);
+                color: var(--white);
+                &:hover {
+                    background-color: var(--green-hover); 
+                }
+                &:active {
+                    background-color: var(--green-active); 
+                }
+            }
         }
     }
 }
 
-@media (min-width: 992px) {
+@media(min-width: 992px) {
     .calendar {
         max-width: 992px;
         .month {
@@ -103,20 +99,19 @@
             }
             .btn-today {
                 display: flex;
-
             }
-            .weekdays {
-                font-size: 41px;
+        }
+        .weedays {
+            li {
+                font-size: 21px;
                 font-weight: bold;
             }
-            .days {
-                grid-template-rows: repeat(5, calc(992px /7));
-                li {
-                    font-size: 38px;
-
-                }
+        }
+        .days {
+            grid-template-rows: repeat(5, calc(992px / 7));
+            li {
+                font-size: 38px;
             }
         }
     }
-
 }
