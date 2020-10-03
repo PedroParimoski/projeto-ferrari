@@ -86,7 +86,7 @@
   font-weight: 400;
 }
 
-body, div, article, aside, footer, header, main, nav, form, section, ul, ol, il, button, figure, picture {
+body, div, article, aside, footer, header, main, nav, form, section, ul, ol, li, button, figure, picture {
   display: flex;
 }
 
