@@ -1,0 +1,30 @@
+#payment-ok {
+
+    main {
+        span {
+            margin-top: var(--space);
+            &:last-child {
+                margin-top: 0;
+                font-size: 12px;
+            }
+        }
+    }
+    aside {
+        #aside {
+            > div {
+                z-index: 6;
+            }
+           
+        }
+    }
+    .fixed {
+        justify-content: center;
+        align-items: center;
+        #btn-ag {
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}

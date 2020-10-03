@@ -319,9 +319,100 @@ header.page-title hr {
   height: calc(100vh - 140px);
   overflow: auto;
 }
+.page aside {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  bottom: 80px;
+  height: 50px;
+  background-color: var(--gray-12);
+  border-bottom: var(--gray-3) 1px solid;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+.page aside header {
+  font-size: 32px;
+  color: var(--dark-0);
+  height: 130px;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.page aside section {
+  padding: 0 var(--space);
+  display: none;
+  flex: 1;
+  max-height: calc(100vh - 339px);
+  overflow-y: auto;
+}
+.page aside section table {
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: var(--gray-3) 1px solid;
+}
+.page aside section table td {
+  padding: var(--space) 0;
+  border-top: var(--gray-3) 1px solid;
+}
+.page aside section table td.price {
+  text-align: right;
+}
+.page aside footer {
+  height: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space);
+  font-size: 18px;
+  color: var(--dark-0);
+}
+.page aside footer .total {
+  font-weight: bold;
+  margin-left: var(--space);
+  text-align: right;
+}
+.page aside footer button {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-);
+  background-color: transparent;
+  color: var(--black);
+  min-width: 50px;
+  width: 50px;
+}
+.page aside footer button:hover {
+  background-color: var(--black-10);
+}
+.page aside footer button:active {
+  background-color: var(--black-75);
+}
+.page aside footer button svg {
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+}
+.page aside.open {
+  height: calc(100vh - 158px);
+}
+.page aside.open header, .page aside.open section {
+  display: flex;
+}
+.page aside.open footer button svg {
+  transform: rotate(180deg);
+}
 .page .page-title {
   margin: var(--space);
-  width: calc(100% - calc(--space)*2);
+  width: calc(100% - calc(var(--space) * 2));
 }
 .page > header {
   width: 100%;
@@ -337,9 +428,14 @@ header.page-title hr {
   font-weight: bold;
   text-transform: uppercase;
 }
+.page > header h1 small {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+}
 .page > main {
-  flex-direction: column;
   margin-bottom: 80px;
+  flex-direction: column;
 }
 .page > main .toast {
   position: fixed;
@@ -502,6 +598,33 @@ header.page-title hr {
     font-size: 30px;
   }
 
+  .page aside, .page aside.open {
+    width: 375px;
+    height: calc(100vh - 118px);
+    bottom: 0;
+    z-index: 4;
+  }
+  .page aside header, .page aside section, .page aside.open header, .page aside.open section {
+    display: flex;
+  }
+  .page aside header, .page aside.open header {
+    height: 160px;
+  }
+  .page aside footer, .page aside.open footer {
+    height: 80px;
+  }
+  .page aside footer > div, .page aside.open footer > div {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+  }
+  .page aside footer > div .total, .page aside.open footer > div .total {
+    font-size: 29px;
+  }
+  .page aside footer button, .page aside.open footer button {
+    display: none;
+  }
   .page > header {
     justify-content: flex-start;
     padding-left: 185px;
@@ -1038,6 +1161,9 @@ header.page-title hr {
   justify-content: flex-end;
   padding: var(--space);
 }
+#home > header ul {
+  display: none;
+}
 #home > header h1 {
   color: var(--white);
   font-size: 80px;
@@ -1108,6 +1234,18 @@ header.page-title hr {
 @media (min-width: 576px) {
   #home .gallery {
     flex-direction: row;
+  }
+  #home > header ul {
+    display: flex;
+    color: var(--white);
+    font-size: 30px;
+    margin: 0;
+    width: 440px;
+    padding: unset;
+    justify-content: space-between;
+  }
+  #home > header ul li {
+    margin-top: unset;
   }
 }
 @media (min-width: 1200px) {
@@ -1754,6 +1892,123 @@ header.page-title hr {
 }
 #schedules-services .options label .content .price {
   font-weight: bold;
+}
+
+#schedules-summary form {
+  margin-top: var(--space);
+}
+
+#schedules-payment {
+  position: relative;
+}
+#schedules-payment > header {
+  height: 260px;
+  min-height: 260px;
+  position: relative;
+}
+#schedules-payment > header h1 {
+  display: none;
+}
+#schedules-payment > main {
+  align-items: center;
+}
+#schedules-payment > main form {
+  max-width: 100%;
+}
+#schedules-payment > main form .form-creditcard {
+  margin-top: var(--space);
+}
+#schedules-payment > main form .form-creditcard .form-fields {
+  flex-direction: column;
+  width: 100%;
+}
+#schedules-payment > main form .form-creditcard .form-fields .fields {
+  flex-direction: row;
+  justify-content: space-between;
+}
+#schedules-payment > main form .form-creditcard .form-fields .fields .field {
+  width: calc(50% - calc(var(--space) / 2));
+}
+#schedules-payment > main form .form-creditcard .form-card {
+  position: absolute;
+  top: 32px;
+  width: 100%;
+  left: 0;
+  justify-content: center;
+  perspective: 1000px;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  width: 300px;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces.flipped {
+  transform: rotateY(180deg);
+}
+#schedules-payment > main form .form-creditcard .form-card .faces svg {
+  width: 300px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces svg.back .name {
+  text-transform: uppercase;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces .back {
+  transform: rotateY(180deg);
+}
+
+@media (min-width: 1200px) {
+  #schedules-payment {
+    position: initial;
+  }
+  #schedules-payment > header {
+    height: 160px;
+    min-width: 160px;
+  }
+  #schedules-payment > header h1 {
+    display: block;
+  }
+  #schedules-payment > main {
+    align-items: flex-start;
+  }
+  #schedules-payment > main form {
+    max-width: 900px;
+    justify-content: space-between;
+  }
+  #schedules-payment > main form .form-creditcard .form-card {
+    position: static;
+    justify-content: center;
+    padding-left: var(--space);
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces {
+    width: 100%;
+    margin-top: -17px;
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces.flipped {
+    transform: translateX(-76) rotateY(180deg);
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces svg {
+    width: 340px;
+  }
+}
+#payment-ok main span {
+  margin-top: var(--space);
+}
+#payment-ok main span:last-child {
+  margin-top: 0;
+  font-size: 12px;
+}
+#payment-ok aside #aside > div {
+  z-index: 6;
+}
+#payment-ok .fixed {
+  justify-content: center;
+  align-items: center;
+}
+#payment-ok .fixed #btn-ag {
+  width: 200px;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */

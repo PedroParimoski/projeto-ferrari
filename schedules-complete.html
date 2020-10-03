@@ -78,59 +78,21 @@
         <hr class="italy"/>
     </header>
 
-    <section id="schedules-services" class="page blue">
+    <section id="payment-ok" class="page green">
+
         <header>
-            <h1>Escolha os Serviços</h1>
+            <h1>Pagamento Efetuado</h1>
         </header>
-        
         <main>
-            <form action="schedules-payment.html">
+            <header  class="page-title">
+                <h2>Obrigado</h2>
+                <hr/>
+                <span>10 de julho de 2020</span>
+                <span>Número do Pedido: 000123</span>
+                <span>Cartão de crédito final 0604</span>
+           </header>
 
-                <div class="options">
-
-                    <label>
-                        <input type="checkbox" name="service" value="1" checked>
-                        <div class="square">
-                            <div></div>
-                        </div>
-                        <div class="content">
-                            <span class="name">Revisão</span>
-                            <span class="description">Verificação mínima necessária</span>
-                            <span class="price">R$ 100,00</span>
-                        </div>
-                    </label>
-
-                    <label>
-                        <input type="checkbox" name="service" value="2" checked>
-                        <div class="square">
-                            <div></div>
-                        </div>
-                        <div class="content">
-                            <span class="name">Alinhamento </span>
-                            <span class="description">Alinhamento e e Balanceamento</span>
-                            <span class="price">R$ 400,00</span>
-                        </div>
-                    </label>
-
-                    <label>
-                        <input type="checkbox" name="service" value="3">
-                        <div class="square">
-                            <div></div>
-                        </div>
-                        <div class="content">
-                            <span class="name">Filtros</span>
-                            <span class="description">Troca de filtro de ar condicionado</span>
-                            <span class="price">R$ 200,00</span>
-                        </div>
-                    </label>
-
-                </div>
-
-                <footer class="fixed">
-                    <a href="schedules-time-options.html">Voltar</a>
-                <button type="submit">Continuar</button>
-                </footer>
-            </form>
+         
         </main>
         <aside>
 
@@ -160,7 +122,7 @@
 
             </section>
             
-            <footer>
+            <footer id="totalg">
                 <button type="button" id="btn-sumary-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="64.317" height="64.317" viewBox="0 0 64.317 64.317"><path d="M0,0H64.317V64.317H0Z" fill="none"/><path d="M9.779,27.858l12.3-12.274,12.3,12.274,3.779-3.779L22.079,8,6,24.079Z" transform="translate(10.079 13.439)"/></svg></button>
 
                 <div>
@@ -171,8 +133,12 @@
             </footer>
         </aside>
 
+        <form action="schedules-services.html">
+            <footer class="fixed">
+                <button type="submit" id="btn-ag">Agendamentos</button>
+            </footer>
+        </form>
     </section>
-   
 
     
 
