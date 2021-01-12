@@ -1,5 +1,4 @@
-import { endOfMonth, endOfWeek, format, startOfWeek } from "date-fns"
-import { startOfMonth } from "date-fns/esm"
+import { endOfMonth, endOfWeek, format, startOfWeek, startOfMonth } from "date-fns"
 import { ptBR } from "date-fns/locale"
 
 document.querySelectorAll(".calendar").forEach(calendar => {
